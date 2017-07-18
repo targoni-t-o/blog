@@ -1,0 +1,31 @@
+<!-- Collect the nav links, forms, and other content for toggling -->
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+  <ul class="nav navbar-nav">
+    <li class="active">
+      <% if user_signed_in? %>
+          <%= link_to 'Articles list', articles_path %>
+      <% end %>
+    </li>
+  </ul>
+  <ul class="nav navbar-nav navbar-right">
+    <% if user_signed_in? %>
+        <li>
+          <%= image_tag current_user.avatar.url(:thumb), size: '30x30' %>
+        </li>
+        <li>
+          <%= link_to current_user.full_name, me_users_path %>
+        </li>
+        <li>
+          <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+        </li>
+    <% else %>
+        <li>
+          <%= link_to 'Login', new_user_session_path %>
+        </li>
+        <li>
+          <%= link_to 'Registration', new_user_registration_path %>
+        </li>
+    <% end %>
+    <!--<a href="#">Link</a>-->
+  </ul>
+</div><!-- /.navbar-collapse -->

@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.all
+    @page = params[:page].present? ? params[:page].to_i : 1
+    @articles = Article.page(@page)
   end
 
   def show
