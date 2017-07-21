@@ -1,15 +1,14 @@
 <p>
   <strong>Commenter:</strong>
-  <%= comment.commenter %>
+  <%= comment.user.present? ? comment.user.full_name : 'Guest' %>
 </p>
 
 <p>
   <strong>Comment:</strong>
   <%= comment.body %>
-
-<p>
-  <%= link_to 'Destroy Comment', [comment.article, comment],
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %>
-</p>
+  <p>
+    <%= link_to 'Destroy Comment', [comment.article, comment],
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+  </p>
 </p>
