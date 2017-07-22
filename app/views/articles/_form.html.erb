@@ -1,4 +1,4 @@
-<%= form_for @article do |f| %>
+<%= simple_form_for @article do |f| %>
 
     <% if @article.errors.any? %>
         <div id="error_explanation">
@@ -21,11 +21,12 @@
 
     <p>
       <%= f.label :text %><br>
-      <%= f.text_area :text %>
+      <%= f.cktext_area :text, class: 'form-control', ckeditor: { language: 'en'} %>
     </p>
 
-    <p>
-      <%= f.submit %>
-    </p>
+    <div class="form-group">
+      <%= f.button :submit, class: 'btn btn-default' %>
+      <%= link_to 'Back', articles_path, class: 'btn btn-default' %>
+    </div>
 
 <% end %>
