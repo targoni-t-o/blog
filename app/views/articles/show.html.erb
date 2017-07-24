@@ -4,9 +4,30 @@
   <div><%= raw @article.text %></div>
 </div>
 
-<div class="btn-group" role="group" aria-label="...">
-  <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-default'%>
-  <%= link_to 'Back', articles_path, class: 'btn btn-default' %>
+<div class="btn-toolbar" role="toolbar">
+  <div class="btn-group" role="group">
+    <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-default'%>
+    <%= link_to 'Back', articles_path, class: 'btn btn-default' %>
+  </div>
+  <div class="btn-group" role="group">
+    <% if @article.liked?(current_user) %>
+        <%= link_to unlike_article_likes_path(@article), method: :put, remote: true,
+                    class: 'btn btn-info', id: 'article-likes' do %>
+            Unlike
+            <span class="badge">
+              <%= @article.likes_count %>
+            </span>
+        <% end %>
+    <% else %>
+        <%= link_to like_article_likes_path(@article), method: :put, remote: true,
+                    class: 'btn btn-info', id: 'article-likes' do %>
+            Like
+            <span class="badge">
+              <%= @article.likes_count %>
+            </span>
+        <% end %>
+  <% end %>
+  </div>
 </div>
 
 <div>

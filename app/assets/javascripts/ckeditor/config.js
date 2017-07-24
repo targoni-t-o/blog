@@ -30,8 +30,8 @@ CKEDITOR.editorConfig = function(config) {
     ];
     config.toolbar = 'Pure';
 
-    //config.skin = 'bootstrapck';
-    config.skin = 'office2013';
+    config.skin = 'bootstrapck';
+    //config.skin = 'office2013';
 
     return true;
 };
