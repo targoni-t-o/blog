@@ -23,3 +23,15 @@
 /public/images
 /public/system
 /public/ckeditor_assets/
+
+/.idea
+Будет удалено .idea/dataSources.local.xml
+Будет удалено .idea/dataSources/599682b0-249b-40d5-9c1a-fae305f24a99/_src_/
+Будет удалено .idea/dataSources/599682b0-249b-40d5-9c1a-fae305f24a99/_staging_/
+Будет удалено .idea/dataSources/b500d80b-2368-467e-b831-b6034da3e42d/_metadata_/
+Будет удалено .idea/dataSources/b500d80b-2368-467e-b831-b6034da3e42d/_src_/
+Будет удалено .idea/dataSources/b500d80b-2368-467e-b831-b6034da3e42d/_staging_/
+Будет удалено .idea/workspace.xml
+Будет удалено app/views/concerns/
+Будет удалено app/views/likes/
+Будет удалено test/controllers/likes_controller_test.rb
