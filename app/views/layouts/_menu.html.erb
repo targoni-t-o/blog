@@ -13,10 +13,10 @@
   <ul class="nav navbar-nav navbar-right">
     <% if user_signed_in? %>
         <li>
-          <%= image_tag current_user.avatar.url(:thumb), size: '30x30' %>
-        </li>
-        <li>
-          <%= link_to current_user.full_name, me_users_path %>
+          <%= link_to me_users_path do %>
+              <%= image_tag current_user.avatar.url(:thumb), size: '30x30' %>
+              <%= link_to current_user.full_name, me_users_path %>
+          <% end %>
         </li>
         <li>
           <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
