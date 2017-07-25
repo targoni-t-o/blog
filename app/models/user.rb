@@ -8,7 +8,8 @@ class User < ApplicationRecord
 
   has_many :comments
   has_many :commented_articles, through: :comments, source: :article
-  has_many :likes, dependent: :destroy
+  # has_many :likes, dependent: :destroy
+  has_and_belongs_to_many :liked_articles, class_name: 'Article'
 
   def full_name
     "#{first_name} #{last_name}"

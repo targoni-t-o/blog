@@ -4,11 +4,12 @@ module Likable
   extend ActiveSupport::Concern
 
   included do
-    has_many :likes, dependent: :destroy
+    # has_many :likes, dependent: :destroy
+    has_and_belongs_to_many :liked_users, class_name: 'User'
   end
 
   def add_like(liker)
-    likes.build(user: liker)
+    liked_users << liker
   end
 
   def add_like!(liker)
@@ -17,14 +18,14 @@ module Likable
   end
 
   def remove_like!(liker)
-    likes.where(user: liker).destroy_all.present?
-  end
-
-  def likes_count
-    likes.count
+    liked_users.delete(liker)
   end
 
   def liked?(liker)
-    likes.exists?(user: liker)
+    liked_users.exists?(liker.id)
+  end
+
+  def likes_count
+    liked_users.count
   end
 end

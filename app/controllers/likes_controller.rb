@@ -2,23 +2,11 @@ class LikesController < ApplicationController
   before_action :set_article
 
   def like
-    render json: {
-      success: @resource.add_like!(current_user),
-      action: 'like',
-      count: @resource.likes_count,
-      like_path: like_article_likes_path(@resource),
-      unlike_path: unlike_article_likes_path(@resource)
-    }
+    @result = @resource.add_like!(current_user)
   end
 
   def unlike
-    render json: {
-      success: @resource.remove_like!(current_user),
-      action: 'unlike',
-      count: @resource.likes_count,
-      like_path: like_article_likes_path(@resource),
-      unlike_path: unlike_article_likes_path(@resource)
-    }
+    @result = @resource.remove_like!(current_user)
   end
 
   private
