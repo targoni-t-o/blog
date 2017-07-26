@@ -4,7 +4,6 @@ module Likable
   extend ActiveSupport::Concern
 
   included do
-    # has_many :likes, dependent: :destroy
     has_and_belongs_to_many :liked_users, class_name: 'User'
   end
 

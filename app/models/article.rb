@@ -3,7 +3,6 @@ class Article < ApplicationRecord
 
   has_many :comments, dependent: :destroy
   has_many :commentators, through: :comments, source: :user
-  # has_many :likes
 
   validates :title, presence: true, length: {minimum: 5}
   validates :text, presence: true

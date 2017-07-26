@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
-  devise_for :users
-  root 'articles#index'
+
+  devise_for :users,
+             controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   resources :users, only: [:update] do
     collection do
@@ -18,4 +19,6 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  root 'articles#index'
 end

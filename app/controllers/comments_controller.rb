@@ -3,13 +3,16 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @article.comments.build(comment_params)
+    authorize(@comment)
     @comment.user = current_user
     @comment.save
+    #TODO
     redirect_to article_path(@article)
   end
 
   def destroy
     @comment = @article.comments.find(params[:id])
+    authorize(@comment)
     @comment.destroy
     redirect_to article_path(@article)
   end

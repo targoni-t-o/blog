@@ -1,39 +1,48 @@
-<div class="col-sm-11 col-xs-12 blog-content">
+<div class="col-xs-12 col-sm-11 blog-content">
   <h2 class="text-center"><%= @article.title %></h2>
   <h5 class="text-center"><%= @article.created_at.strftime('%b %d, %Y') %></h5>
-  <div><%= raw @article.text %></div>
-</div>
-
-<div class="btn-toolbar" role="toolbar">
-  <div class="btn-group" role="group">
-    <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-default'%>
-    <%= link_to 'Back', articles_path, class: 'btn btn-default' %>
-  </div>
-  <div class="btn-group" role="group">
-    <% if @article.liked?(current_user) %>
-        <%= link_to unlike_article_likes_path(@article), method: :put, remote: true,
-                    class: 'btn btn-info', id: 'article-likes' do %>
-            Unlike
-            <span class="badge">
-              <%= @article.likes_count %>
-            </span>
-        <% end %>
-    <% else %>
-        <%= link_to like_article_likes_path(@article), method: :put, remote: true,
-                    class: 'btn btn-info', id: 'article-likes' do %>
-            Like
-            <span class="badge">
-              <%= @article.likes_count %>
-            </span>
-        <% end %>
-  <% end %>
+  <div class="panel panel-default">
+    <%= raw @article.text %>
   </div>
 </div>
 
-<div>
-  <h3>Comments</h3>
-    <%= render @article.comments %>
+<div class="col-xs-12 col-sm-11 buttons">
+  <div class="btn-toolbar" role="toolbar">
+    <div class="btn-group" role="group">
+      <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-warning' if policy(@article).edit? %>
+      <%= link_to 'Delete', article_path(@article), method: :delete, class: 'btn btn-danger' if policy(@article).destroy? %>
+    </div>
+    <div class="btn-group" role="group">
+      <%= link_to 'Back', articles_path, class: 'btn btn-default' %>
+    </div>
+    <div class="btn-group" role="group">
+      <% if @article.liked?(current_user) %>
+          <%= link_to unlike_article_likes_path(@article), method: :put, remote: true,
+                      class: 'btn btn-info', id: 'article-likes' do %>
+              <span class="glyphicon glyphicon-thumbs-down"></span>
+              Unlike
+              <span class="badge">
+                <%= @article.likes_count %>
+              </span>
+          <% end %>
+      <% else %>
+          <%= link_to like_article_likes_path(@article), method: :put, remote: true,
+                      class: 'btn btn-info', id: 'article-likes' do %>
+              <span class="glyphicon glyphicon-thumbs-up"></span>
+              Like
+              <span class="badge">
+                <%= @article.likes_count %>
+              </span>
+          <% end %>
+    <% end %>
+    </div>
+  </div>
+</div>
 
-  <h3>Add a comment:</h3>
-    <%= render 'comments/form'%>
+<div class="col-xs-12 col-sm-11 comments">
+  <h4>Comments:</h4>
+  <%= render @article.comments %>
+
+  <h4>Add a comment:</h4>
+  <%= render 'comments/form'%>
 </div>

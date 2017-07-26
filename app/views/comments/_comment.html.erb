@@ -1,16 +1,14 @@
-<div>
-  <strong>Commenter:</strong>
-  <%= comment.user.present? ? comment.user.full_name : 'Guest' %>
-</div>
+<div class="well">
+   <p class="text-muted">Added by <strong><%= comment.user.full_name %></strong> on
+    <%= l(comment.created_at, format: '%B, %d %Y %H:%M:%S') %></p>
 
-<div>
-  <strong>Comment:</strong>
-  <%= comment.body %>
+  <blockquote>
+    <p><%= comment.body %></p>
+  </blockquote>
 
-  <div>
-    <%= link_to 'Destroy Comment', [comment.article, comment],
-                method: :delete,
-                data: { confirm: 'Are you sure?' },
-                class: 'btn btn-danger' %>
-  </div>
+  <%= link_to 'Delete',
+              [comment.article, comment],
+              method: :delete,
+              data: { confirm: 'Are you sure?' },
+              class: 'btn btn-danger' if policy(comment).destroy? %>
 </div>

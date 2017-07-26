@@ -11,6 +11,7 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
+    authorize(@article)
   end
 
   def edit
@@ -18,6 +19,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    authorize(@article)
 
     if @article.save
       redirect_to @article

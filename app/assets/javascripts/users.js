@@ -3,13 +3,13 @@ $(document).on('turbolinks:load', function() {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
             reader.onload = function (event) {
-                $('#avatarPreview').attr('src', event.target.result);
+                $('#user-avatar-preview').attr('src', event.target.result);
             };
             reader.readAsDataURL(input.files[0]);
         }
     }
 
-    $("#avatarInput").change(function(){
+    $("#user_avatar").change(function(){
         readURL(this);
     });
 });
