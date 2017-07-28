@@ -59,6 +59,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+gem 'activeadmin'
 gem 'bootstrap-kaminari-views'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap-social-rails'
@@ -69,6 +70,7 @@ gem 'font-awesome-rails'
 gem 'kaminari'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'omniauth-github'
 gem 'paperclip', '~> 5.0.0'
 gem 'pundit'
 gem 'simple_form'

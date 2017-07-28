@@ -12,9 +12,11 @@
       <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-warning' if policy(@article).edit? %>
       <%= link_to 'Delete', article_path(@article), method: :delete, class: 'btn btn-danger' if policy(@article).destroy? %>
     </div>
+
     <div class="btn-group" role="group">
       <%= link_to 'Back', articles_path, class: 'btn btn-default' %>
     </div>
+
     <div class="btn-group" role="group">
       <% if @article.liked?(current_user) %>
           <%= link_to unlike_article_likes_path(@article), method: :put, remote: true,
@@ -40,9 +42,11 @@
 </div>
 
 <div class="col-xs-12 col-sm-11 comments">
-  <h4>Comments:</h4>
-  <%= render @article.comments %>
-
   <h4>Add a comment:</h4>
   <%= render 'comments/form'%>
+
+  <h4>Comments:</h4>
+  <% @article.comments.each do |comment| %>
+    <%= render comment if comment.persisted? %>
+  <% end %>
 </div>
