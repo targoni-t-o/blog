@@ -20,6 +20,7 @@
     <div class="btn-group" role="group">
       <% if @article.liked?(current_user) %>
           <%= link_to unlike_article_likes_path(@article), method: :put, remote: true,
+                      data: { type: :json },
                       class: 'btn btn-info', id: 'article-likes' do %>
               <span class="glyphicon glyphicon-thumbs-down"></span>
               Unlike
@@ -29,6 +30,7 @@
           <% end %>
       <% else %>
           <%= link_to like_article_likes_path(@article), method: :put, remote: true,
+                      data: { type: :json },
                       class: 'btn btn-info', id: 'article-likes' do %>
               <span class="glyphicon glyphicon-thumbs-up"></span>
               Like

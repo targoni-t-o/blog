@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   resources :articles do
     resources :comments
-    resources :likes, only: [] do
+    resources :likes, only: [], defaults: { format: 'json' } do
       collection do
         put :like
         put :unlike
