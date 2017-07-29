@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  mount Ckeditor::Engine => '/ckeditor'
+  mount Ckeditor::Engine, at: '/ckeditor'
+  mount API, at: '/'
 
   devise_for :users,
              controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }

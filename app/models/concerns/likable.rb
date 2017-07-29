@@ -17,8 +17,7 @@ module Likable
   end
 
   def remove_like!(liker)
-    result = liked_users.delete(liker)
-    !result.empty?
+    liked_users.delete(liker)
   end
 
   def liked?(liker)
