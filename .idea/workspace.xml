@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc7885bd-5bcd-4fe1-b92c-1c0afce45176" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/blog.iml" afterPath="$PROJECT_DIR$/.idea/blog.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="test/" />
@@ -807,7 +804,7 @@
       <workItem from="1501276494289" duration="97000" />
       <workItem from="1501276675550" duration="340000" />
       <workItem from="1501324895845" duration="27002000" />
-      <workItem from="1501356456250" duration="394000" />
+      <workItem from="1501356456250" duration="406000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1482187023253</created>
@@ -1012,7 +1009,14 @@
       <option name="project" value="LOCAL" />
       <updated>1501356493917</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="API">
+      <created>1501356863831</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1501356863831</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1021,7 +1025,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="270389000" />
+    <option name="totallyTimeSpent" value="270401000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
