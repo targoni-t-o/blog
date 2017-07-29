@@ -24,4 +24,4 @@
 /public/system
 /public/ckeditor_assets
 /config/database.yml
-/.idea
+#/.idea
