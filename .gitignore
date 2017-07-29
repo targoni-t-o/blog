@@ -21,6 +21,7 @@
 .byebug_history
 
 /public/images
-/public/system/*
-/public/ckeditor_assets/
+/public/system
+/public/ckeditor_assets
+/config/database.yml
 /.idea
