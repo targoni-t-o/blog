@@ -31,5 +31,10 @@
       <user-name>root</user-name>
       <introspection-schemas>*:blog_test</introspection-schemas>
     </data-source>
+    <data-source name="Rails blog: production" uuid="1e82ca66-bf10-40c3-a6e8-8afe0d2a907d">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <first-sync>true</first-sync>
+      <user-name>root</user-name>
+    </data-source>
   </component>
 </project>

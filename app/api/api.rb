@@ -33,5 +33,4 @@ class API < Grape::API
       end
     end
   end
-
 end
